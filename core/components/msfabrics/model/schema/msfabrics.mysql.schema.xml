@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model package="msfabrics" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="msfabrics"
-       version="1.1">
+<model package="msfabrics" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" version="1.1">
 
-    <object class="msFabricsItem" table="msfabrics_items" extends="xPDOSimpleObject">
-        <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
-        <field key="description" dbtype="text" phptype="text" null="true" default=""/>
-        <field key="active" dbtype="tinyint" precision="1" phptype="boolean" null="true" default="1"/>
-
-        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
-            <column key="name" length="" collation="A" null="false"/>
-        </index>
-        <index alias="active" name="active" primary="false" unique="false" type="BTREE">
-            <column key="active" length="" collation="A" null="false"/>
-        </index>
+    <object class="msfabricsCategory" table="msfabrics_category" extends="xPDOSimpleObject">
+        <field key="category_fabrics" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" />
     </object>
 
+    <object class="msfabricsType" table="msfabrics_type" extends="xPDOSimpleObject">
+        <field key="type_fabrics" dbtype="varchar" precision="100" phptype="string" null="false" />
+    </object>
+
+    <object class="msfabricsVendors" table="msfabrics_vendors" extends="xPDOSimpleObject">
+        <field key="vendors_fabrics" dbtype="varchar" precision="100" phptype="string" null="false" />
+    </object>
 </model>
