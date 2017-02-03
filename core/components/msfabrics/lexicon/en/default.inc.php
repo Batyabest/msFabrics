@@ -2,10 +2,10 @@
 include_once 'setting.inc.php';
 
 $_lang['msfabrics'] = 'msFabrics';
-$_lang['msfabrics_menu_desc'] = 'A sample Extra to develop from.';
-$_lang['msfabrics_intro_msg'] = 'You can select multiple items by holding Shift or Ctrl button.';
+$_lang['msfabrics_menu_desc'] = 'Fabrics Category';
+$_lang['msfabrics_category_intro'] = 'You can select multiple category fabrics by using the Shift or Ctrl key.';
 
-$_lang['msfabrics_items'] = 'Items';
+$_lang['msfabrics_categorys'] = 'Fabrics Category';
 $_lang['msfabrics_item_id'] = 'Id';
 $_lang['msfabrics_item_name'] = 'Name';
 $_lang['msfabrics_item_description'] = 'Description';

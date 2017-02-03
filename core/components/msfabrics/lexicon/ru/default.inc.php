@@ -2,10 +2,10 @@
 include_once 'setting.inc.php';
 
 $_lang['msfabrics'] = 'msFabrics';
-$_lang['msfabrics_menu_desc'] = 'Пример расширения для разработки.';
-$_lang['msfabrics_intro_msg'] = 'Вы можете выделять сразу несколько предметов при помощи Shift или Ctrl.';
+$_lang['msfabrics_menu_desc'] = 'Категории тканей';
+$_lang['msfabrics_category_intro'] = 'Вы можете выделять сразу несколько категорий тканей при помощи Shift или Ctrl.';
 
-$_lang['msfabrics_items'] = 'Предметы';
+$_lang['msfabrics_categorys'] = 'Категории тканей';
 $_lang['msfabrics_item_id'] = 'Id';
 $_lang['msfabrics_item_name'] = 'Название';
 $_lang['msfabrics_item_description'] = 'Описание';

@@ -20,13 +20,13 @@ msFabrics.panel.Home = function (config) {
             border: true,
             hideMode: 'offsets',
             items: [{
-                title: _('msfabrics_items'),
+                title: _('msfabrics_categorys'),
                 layout: 'anchor',
                 items: [{
-                    html: _('msfabrics_intro_msg'),
+                    html: _('msfabrics_category_intro'),
                     cls: 'panel-desc',
                 }, {
-                    xtype: 'msfabrics-grid-items',
+                    xtype: 'msfabrics-grid-categorys',
                     cls: 'main-wrapper',
                 }]
             }]

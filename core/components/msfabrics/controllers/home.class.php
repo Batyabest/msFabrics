@@ -59,7 +59,7 @@ class msFabricsHomeManagerController extends modExtraManagerController
         $this->addJavascript($this->msFabrics->config['jsUrl'] . 'mgr/msfabrics.js');
         $this->addJavascript($this->msFabrics->config['jsUrl'] . 'mgr/misc/utils.js');
         $this->addJavascript($this->msFabrics->config['jsUrl'] . 'mgr/misc/combo.js');
-        $this->addJavascript($this->msFabrics->config['jsUrl'] . 'mgr/widgets/items.grid.js');
+        $this->addJavascript($this->msFabrics->config['jsUrl'] . 'mgr/widgets/categorys.grid.js');
         $this->addJavascript($this->msFabrics->config['jsUrl'] . 'mgr/widgets/items.windows.js');
         $this->addJavascript($this->msFabrics->config['jsUrl'] . 'mgr/widgets/home.panel.js');
         $this->addJavascript($this->msFabrics->config['jsUrl'] . 'mgr/sections/home.js');

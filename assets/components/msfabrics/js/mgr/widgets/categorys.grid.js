@@ -284,4 +284,4 @@ Ext.extend(msFabrics.grid.Items, MODx.grid.Grid, {
         this.getBottomToolbar().changePage(1);
     },
 });
-Ext.reg('msfabrics-grid-items', msFabrics.grid.Items);
+Ext.reg('msfabrics-grid-categorys', msFabrics.grid.Items);
