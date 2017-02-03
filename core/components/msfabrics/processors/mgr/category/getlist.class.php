@@ -1,9 +1,9 @@
 <?php
 
-class msFabricsItemGetListProcessor extends modObjectGetListProcessor
+class msFabricsCategoryGetListProcessor extends modObjectGetListProcessor
 {
-    public $objectType = 'msFabricsItem';
-    public $classKey = 'msFabricsItem';
+    public $objectType = 'msFabricsCategory';
+    public $classKey = 'msFabricsCategory';
     public $defaultSortField = 'id';
     public $defaultSortDirection = 'DESC';
     //public $permission = 'list';
@@ -58,8 +58,8 @@ class msFabricsItemGetListProcessor extends modObjectGetListProcessor
         $array['actions'][] = array(
             'cls' => '',
             'icon' => 'icon icon-edit',
-            'title' => $this->modx->lexicon('msfabrics_item_update'),
-            //'multiple' => $this->modx->lexicon('msfabrics_items_update'),
+            'title' => $this->modx->lexicon('msfabrics_category_update'),
+            //'multiple' => $this->modx->lexicon('msfabrics_categorys_update'),
             'action' => 'updateItem',
             'button' => true,
             'menu' => true,
@@ -69,8 +69,8 @@ class msFabricsItemGetListProcessor extends modObjectGetListProcessor
             $array['actions'][] = array(
                 'cls' => '',
                 'icon' => 'icon icon-power-off action-green',
-                'title' => $this->modx->lexicon('msfabrics_item_enable'),
-                'multiple' => $this->modx->lexicon('msfabrics_items_enable'),
+                'title' => $this->modx->lexicon('msfabrics_category_enable'),
+                'multiple' => $this->modx->lexicon('msfabrics_categorys_enable'),
                 'action' => 'enableItem',
                 'button' => true,
                 'menu' => true,
@@ -79,8 +79,8 @@ class msFabricsItemGetListProcessor extends modObjectGetListProcessor
             $array['actions'][] = array(
                 'cls' => '',
                 'icon' => 'icon icon-power-off action-gray',
-                'title' => $this->modx->lexicon('msfabrics_item_disable'),
-                'multiple' => $this->modx->lexicon('msfabrics_items_disable'),
+                'title' => $this->modx->lexicon('msfabrics_category_disable'),
+                'multiple' => $this->modx->lexicon('msfabrics_categorys_disable'),
                 'action' => 'disableItem',
                 'button' => true,
                 'menu' => true,
@@ -91,8 +91,8 @@ class msFabricsItemGetListProcessor extends modObjectGetListProcessor
         $array['actions'][] = array(
             'cls' => '',
             'icon' => 'icon icon-trash-o action-red',
-            'title' => $this->modx->lexicon('msfabrics_item_remove'),
-            'multiple' => $this->modx->lexicon('msfabrics_items_remove'),
+            'title' => $this->modx->lexicon('msfabrics_category_remove'),
+            'multiple' => $this->modx->lexicon('msfabrics_categorys_remove'),
             'action' => 'removeItem',
             'button' => true,
             'menu' => true,
@@ -103,4 +103,4 @@ class msFabricsItemGetListProcessor extends modObjectGetListProcessor
 
 }
 
-return 'msFabricsItemGetListProcessor';
+return 'msFabricsCategoryGetListProcessor';

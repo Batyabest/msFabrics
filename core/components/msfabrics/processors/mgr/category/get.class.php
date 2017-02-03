@@ -1,9 +1,9 @@
 <?php
 
-class msFabricsItemGetProcessor extends modObjectGetProcessor
+class msFabricsCategoryGetProcessor extends modObjectGetProcessor
 {
-    public $objectType = 'msFabricsItem';
-    public $classKey = 'msFabricsItem';
+    public $objectType = 'msFabricsCategory';
+    public $classKey = 'msFabricsCategory';
     public $languageTopics = array('msfabrics:default');
     //public $permission = 'view';
 
@@ -25,4 +25,4 @@ class msFabricsItemGetProcessor extends modObjectGetProcessor
 
 }
 
-return 'msFabricsItemGetProcessor';
+return 'msFabricsCategoryGetProcessor';

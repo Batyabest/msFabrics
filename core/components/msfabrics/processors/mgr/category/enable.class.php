@@ -1,9 +1,9 @@
 <?php
 
-class msFabricsItemEnableProcessor extends modObjectProcessor
+class msFabricsCategoryEnableProcessor extends modObjectProcessor
 {
-    public $objectType = 'msFabricsItem';
-    public $classKey = 'msFabricsItem';
+    public $objectType = 'msFabricsCategory';
+    public $classKey = 'msFabricsCategory';
     public $languageTopics = array('msfabrics');
     //public $permission = 'save';
 
@@ -19,13 +19,13 @@ class msFabricsItemEnableProcessor extends modObjectProcessor
 
         $ids = $this->modx->fromJSON($this->getProperty('ids'));
         if (empty($ids)) {
-            return $this->failure($this->modx->lexicon('msfabrics_item_err_ns'));
+            return $this->failure($this->modx->lexicon('msfabrics_category_err_ns'));
         }
 
         foreach ($ids as $id) {
-            /** @var msFabricsItem $object */
+            /** @var msFabricsCategory $object */
             if (!$object = $this->modx->getObject($this->classKey, $id)) {
-                return $this->failure($this->modx->lexicon('msfabrics_item_err_nf'));
+                return $this->failure($this->modx->lexicon('msfabrics_category_err_nf'));
             }
 
             $object->set('active', true);
@@ -37,4 +37,4 @@ class msFabricsItemEnableProcessor extends modObjectProcessor
 
 }
 
-return 'msFabricsItemEnableProcessor';
+return 'msFabricsCategoryEnableProcessor';

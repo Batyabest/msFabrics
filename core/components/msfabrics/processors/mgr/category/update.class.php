@@ -1,9 +1,9 @@
 <?php
 
-class msFabricsItemUpdateProcessor extends modObjectUpdateProcessor
+class msFabricsCategoryUpdateProcessor extends modObjectUpdateProcessor
 {
-    public $objectType = 'msFabricsItem';
-    public $classKey = 'msFabricsItem';
+    public $objectType = 'msFabricsCategory';
+    public $classKey = 'msFabricsCategory';
     public $languageTopics = array('msfabrics');
     //public $permission = 'save';
 
@@ -32,17 +32,17 @@ class msFabricsItemUpdateProcessor extends modObjectUpdateProcessor
         $id = (int)$this->getProperty('id');
         $name = trim($this->getProperty('name'));
         if (empty($id)) {
-            return $this->modx->lexicon('msfabrics_item_err_ns');
+            return $this->modx->lexicon('msfabrics_category_err_ns');
         }
 
         if (empty($name)) {
-            $this->modx->error->addField('name', $this->modx->lexicon('msfabrics_item_err_name'));
+            $this->modx->error->addField('name', $this->modx->lexicon('msfabrics_category_err_name'));
         } elseif ($this->modx->getCount($this->classKey, array('name' => $name, 'id:!=' => $id))) {
-            $this->modx->error->addField('name', $this->modx->lexicon('msfabrics_item_err_ae'));
+            $this->modx->error->addField('name', $this->modx->lexicon('msfabrics_category_err_ae'));
         }
 
         return parent::beforeSet();
     }
 }
 
-return 'msFabricsItemUpdateProcessor';
+return 'msFabricsCategoryUpdateProcessor';

@@ -1,11 +1,11 @@
 <?php
 
-class msFabricsItemRemoveProcessor extends modObjectProcessor
+class msFabricsCategoryDisableProcessor extends modObjectProcessor
 {
-    public $objectType = 'msFabricsItem';
-    public $classKey = 'msFabricsItem';
+    public $objectType = 'msFabricsCategory';
+    public $classKey = 'msFabricsCategory';
     public $languageTopics = array('msfabrics');
-    //public $permission = 'remove';
+    //public $permission = 'save';
 
 
     /**
@@ -19,16 +19,17 @@ class msFabricsItemRemoveProcessor extends modObjectProcessor
 
         $ids = $this->modx->fromJSON($this->getProperty('ids'));
         if (empty($ids)) {
-            return $this->failure($this->modx->lexicon('msfabrics_item_err_ns'));
+            return $this->failure($this->modx->lexicon('msfabrics_category_err_ns'));
         }
 
         foreach ($ids as $id) {
-            /** @var msFabricsItem $object */
+            /** @var msFabricsCategory $object */
             if (!$object = $this->modx->getObject($this->classKey, $id)) {
-                return $this->failure($this->modx->lexicon('msfabrics_item_err_nf'));
+                return $this->failure($this->modx->lexicon('msfabrics_category_err_nf'));
             }
 
-            $object->remove();
+            $object->set('active', false);
+            $object->save();
         }
 
         return $this->success();
@@ -36,4 +37,4 @@ class msFabricsItemRemoveProcessor extends modObjectProcessor
 
 }
 
-return 'msFabricsItemRemoveProcessor';
+return 'msFabricsCategoryDisableProcessor';
