@@ -7,7 +7,7 @@ $_lang['msfabrics_category_intro'] = 'Вы можете выделять сра�
 
 $_lang['msfabrics_categorys'] = 'Категории тканей';
 $_lang['msfabrics_category_id'] = 'Id';
-$_lang['msfabrics_category_name'] = 'Название';
+$_lang['msfabrics_category_category_fabrics'] = 'Категория ткани';
 $_lang['msfabrics_category_description'] = 'Описание';
 $_lang['msfabrics_category_active'] = 'Активно';
 

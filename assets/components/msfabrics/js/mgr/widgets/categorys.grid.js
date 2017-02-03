@@ -182,7 +182,7 @@ Ext.extend(msFabrics.grid.Categorys, MODx.grid.Grid, {
     },
 
     getFields: function () {
-        return ['id', 'name', 'description', 'active', 'actions'];
+        return ['id', 'category_fabrics'];
     },
 
     getColumns: function () {
@@ -192,28 +192,10 @@ Ext.extend(msFabrics.grid.Categorys, MODx.grid.Grid, {
             sortable: true,
             width: 70
         }, {
-            header: _('msfabrics_category_name'),
-            dataIndex: 'name',
+            header: _('msfabrics_category_category_fabrics'),
+            dataIndex: 'category_fabrics',
             sortable: true,
-            width: 200,
-        }, {
-            header: _('msfabrics_category_description'),
-            dataIndex: 'description',
-            sortable: false,
-            width: 250,
-        }, {
-            header: _('msfabrics_category_active'),
-            dataIndex: 'active',
-            renderer: msFabrics.utils.renderBoolean,
-            sortable: true,
-            width: 100,
-        }, {
-            header: _('msfabrics_category_actions'),
-            dataIndex: 'actions',
-            renderer: msFabrics.utils.renderActions,
-            sortable: false,
-            width: 100,
-            id: 'actions'
+            width: 200
         }];
     },
 

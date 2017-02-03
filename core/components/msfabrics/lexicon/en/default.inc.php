@@ -7,7 +7,7 @@ $_lang['msfabrics_category_intro'] = 'You can select multiple category fabrics b
 
 $_lang['msfabrics_categorys'] = 'Fabrics Category';
 $_lang['msfabrics_category_id'] = 'Id';
-$_lang['msfabrics_category_name'] = 'Name';
+$_lang['msfabrics_category_category_fabrics'] = 'Fabrics Category';
 $_lang['msfabrics_category_description'] = 'Description';
 $_lang['msfabrics_category_active'] = 'Active';
 
