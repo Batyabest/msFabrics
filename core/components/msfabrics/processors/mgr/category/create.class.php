@@ -13,11 +13,11 @@ class msFabricsCategoryCreateProcessor extends modObjectCreateProcessor
      */
     public function beforeSet()
     {
-        $name = trim($this->getProperty('name'));
-        if (empty($name)) {
-            $this->modx->error->addField('name', $this->modx->lexicon('msfabrics_category_err_name'));
-        } elseif ($this->modx->getCount($this->classKey, array('name' => $name))) {
-            $this->modx->error->addField('name', $this->modx->lexicon('msfabrics_category_err_ae'));
+        $category_fabrics = trim($this->getProperty('category_fabrics'));
+        if (empty($category_fabrics)) {
+            $this->modx->error->addField('category_fabrics', $this->modx->lexicon('msfabrics_category_err_category_fabrics'));
+        } elseif ($this->modx->getCount($this->classKey, array('category_fabrics' => $category_fabrics))) {
+            $this->modx->error->addField('category_fabrics', $this->modx->lexicon('msfabrics_category_err_ae'));
         }
 
         return parent::beforeSet();

@@ -1,5 +1,5 @@
 <?php
-$xpdo_meta_map['msfabricsCategory']= array (
+$xpdo_meta_map['msFabricsCategory']= array (
   'package' => 'msfabrics',
   'version' => '1.1',
   'table' => 'msfabrics_category',

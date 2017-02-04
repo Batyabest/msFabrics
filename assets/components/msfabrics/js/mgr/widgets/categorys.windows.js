@@ -66,24 +66,12 @@ Ext.extend(msFabrics.window.UpdateCategory, MODx.Window, {
             name: 'id',
             id: config.id + '-id',
         }, {
-            xtype: 'textfield',
+            xtype: 'numberfield',
             fieldLabel: _('msfabrics_category_name'),
-            name: 'name',
-            id: config.id + '-name',
+            name: 'category_name',
+            id: config.id + '-category_name',
             anchor: '99%',
             allowBlank: false,
-        }, {
-            xtype: 'textarea',
-            fieldLabel: _('msfabrics_category_description'),
-            name: 'description',
-            id: config.id + '-description',
-            anchor: '99%',
-            height: 150,
-        }, {
-            xtype: 'xcheckbox',
-            boxLabel: _('msfabrics_category_active'),
-            name: 'active',
-            id: config.id + '-active',
         }];
     },
 

@@ -55,7 +55,7 @@ Ext.extend(msFabrics.grid.Categorys, MODx.grid.Grid, {
         this.addContextMenuItem(menu);
     },
 
-    createItem: function (btn, e) {
+    createCategory: function (btn, e) {
         var w = MODx.load({
             xtype: 'msfabrics-category-window-create',
             id: Ext.id(),
@@ -202,7 +202,7 @@ Ext.extend(msFabrics.grid.Categorys, MODx.grid.Grid, {
     getTopBar: function () {
         return [{
             text: '<i class="icon icon-plus"></i>&nbsp;' + _('msfabrics_category_create'),
-            handler: this.createItem,
+            handler: this.createCategory,
             scope: this
         }, '->', {
             xtype: 'msfabrics-field-search',
