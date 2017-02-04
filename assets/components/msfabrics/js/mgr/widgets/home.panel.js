@@ -29,7 +29,17 @@ msFabrics.panel.Home = function (config) {
                     xtype: 'msfabrics-grid-categorys',
                     cls: 'main-wrapper',
                 }]
-            }]
+            },{
+                    title: _('msfabrics_types'),
+                    layout: 'anchor',
+                    items: [{
+                        html: _('msfabrics_type_intro'),
+                        cls: 'panel-desc',
+                    }, {
+                        xtype: 'msfabrics-grid-types',
+                        cls: 'main-wrapper',
+                    }]
+                }]
         }]
     });
     msFabrics.panel.Home.superclass.constructor.call(this, config);

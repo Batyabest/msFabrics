@@ -6,6 +6,7 @@ $_lang['msfabrics_menu_desc'] = 'Категории тканей';
 $_lang['msfabrics_category_intro'] = 'Вы можете выделять сразу несколько категорий тканей при помощи Shift или Ctrl.';
 
 $_lang['msfabrics_categorys'] = 'Категории тканей';
+$_lang['msfabrics_types'] = 'Тип тканей';
 $_lang['msfabrics_category_id'] = 'Id';
 $_lang['msfabrics_category_category_fabrics'] = 'Категория ткани';
 $_lang['msfabrics_category_description'] = 'Описание';
