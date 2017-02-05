@@ -3,8 +3,8 @@
 $xpdo_meta_map = array (
   'xPDOSimpleObject' => 
   array (
-    0 => 'msfabricsCategory',
-    1 => 'msfabricsType',
-    2 => 'msfabricsVendors',
+    0 => 'msFabricsCategory',
+    1 => 'msFabricsType',
+    2 => 'msFabricsVendor',
   ),
 );

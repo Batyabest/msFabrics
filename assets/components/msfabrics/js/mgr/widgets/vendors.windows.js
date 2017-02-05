@@ -1,14 +1,14 @@
-msFabrics.window.CreateType = function (config) {
+msFabrics.window.CreateVendor = function (config) {
     config = config || {};
     if (!config.id) {
-        config.id = 'msfabrics-type-window-create';
+        config.id = 'msfabrics-vendor-window-create';
     }
     Ext.applyIf(config, {
-        title: _('msfabrics_type_create'),
+        title: _('msfabrics_vendor_create'),
         width: 550,
         autoHeight: true,
         url: msFabrics.config.connector_url,
-        action: 'mgr/type/create',
+        action: 'mgr/vendor/create',
         fields: this.getFields(config),
         keys: [{
             key: Ext.EventObject.ENTER, shift: true, fn: function () {
@@ -16,16 +16,16 @@ msFabrics.window.CreateType = function (config) {
             }, scope: this
         }]
     });
-    msFabrics.window.CreateType.superclass.constructor.call(this, config);
+    msFabrics.window.CreateVendor.superclass.constructor.call(this, config);
 };
-Ext.extend(msFabrics.window.CreateType, MODx.Window, {
+Ext.extend(msFabrics.window.CreateVendor, MODx.Window, {
 
     getFields: function (config) {
         return [{
             xtype: 'textfield',
-            fieldLabel: _('msfabrics_type_type_fabrics'),
-            name: 'type_fabrics',
-            id: config.id + '-type_fabrics',
+            fieldLabel: _('msfabrics_vendor_vendors_fabrics'),
+            name: 'vendors_fabrics',
+            id: config.id + '-vendors_fabrics',
             anchor: '99%',
             allowBlank: false,
         }];
@@ -35,20 +35,20 @@ Ext.extend(msFabrics.window.CreateType, MODx.Window, {
     }
 
 });
-Ext.reg('msfabrics-type-window-create', msFabrics.window.CreateType);
+Ext.reg('msfabrics-vendor-window-create', msFabrics.window.CreateVendor);
 
 
-msFabrics.window.UpdateType = function (config) {
+msFabrics.window.UpdateVendor = function (config) {
     config = config || {};
     if (!config.id) {
-        config.id = 'msfabrics-type-window-update';
+        config.id = 'msfabrics-vendor-window-update';
     }
     Ext.applyIf(config, {
-        title: _('msfabrics_type_update'),
+        title: _('msfabrics_vendor_update'),
         width: 550,
         autoHeight: true,
         url: msFabrics.config.connector_url,
-        action: 'mgr/type/update',
+        action: 'mgr/vendor/update',
         fields: this.getFields(config),
         keys: [{
             key: Ext.EventObject.ENTER, shift: true, fn: function () {
@@ -56,9 +56,9 @@ msFabrics.window.UpdateType = function (config) {
             }, scope: this
         }]
     });
-    msFabrics.window.UpdateType.superclass.constructor.call(this, config);
+    msFabrics.window.UpdateVendor.superclass.constructor.call(this, config);
 };
-Ext.extend(msFabrics.window.UpdateType, MODx.Window, {
+Ext.extend(msFabrics.window.UpdateVendor, MODx.Window, {
 
     getFields: function (config) {
         return [{
@@ -67,9 +67,9 @@ Ext.extend(msFabrics.window.UpdateType, MODx.Window, {
             id: config.id + '-id',
         }, {
             xtype: 'textfield',
-            fieldLabel: _('msfabrics_type_type_fabrics'),
-            name: 'type_fabrics',
-            id: config.id + '-type_fabrics',
+            fieldLabel: _('msfabrics_vendor_vendors_fabrics'),
+            name: 'vendors_fabrics',
+            id: config.id + '-vendors_fabrics',
             anchor: '99%',
             allowBlank: false,
         }];
@@ -79,4 +79,4 @@ Ext.extend(msFabrics.window.UpdateType, MODx.Window, {
     }
 
 });
-Ext.reg('msfabrics-type-window-update', msFabrics.window.UpdateType);
+Ext.reg('msfabrics-vendor-window-update', msFabrics.window.UpdateVendor);

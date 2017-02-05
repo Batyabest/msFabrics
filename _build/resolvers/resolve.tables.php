@@ -11,9 +11,9 @@ if ($object->xpdo) {
 
             $manager = $modx->getManager();
             $objects = array (
-                'msfabricsCategory',
-                'msfabricsType',
-                'msfabricsVendors',
+                'msFabricsCategory',
+                'msFabricsType',
+                'msFabricsVendor',
             );
             foreach ($objects as $object) {
                 $manager->createObjectContainer($object);

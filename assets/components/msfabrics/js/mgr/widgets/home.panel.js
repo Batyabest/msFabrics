@@ -39,7 +39,17 @@ msFabrics.panel.Home = function (config) {
                         xtype: 'msfabrics-grid-types',
                         cls: 'main-wrapper',
                     }]
+                },{
+                title: _('msfabrics_vendors'),
+                layout: 'anchor',
+                items: [{
+                    html: _('msfabrics_vendor_intro'),
+                    cls: 'panel-desc',
+                }, {
+                    xtype: 'msfabrics-grid-vendors',
+                    cls: 'main-wrapper',
                 }]
+            }]
         }]
     });
     msFabrics.panel.Home.superclass.constructor.call(this, config);
