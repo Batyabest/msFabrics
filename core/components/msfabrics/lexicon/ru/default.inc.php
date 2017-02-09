@@ -12,12 +12,12 @@ $_lang['msfabrics_category_description'] = 'Описание';
 $_lang['msfabrics_category_active'] = 'Активно';
 
 $_lang['msfabrics_category_create'] = 'Создать категорию ткани';
-$_lang['msfabrics_category_update'] = 'Изменить Предмет';
+$_lang['msfabrics_category_update'] = 'Изменить категорию';
 $_lang['msfabrics_category_enable'] = 'Включить Предмет';
 $_lang['msfabrics_categorys_enable'] = 'Включить Предметы';
 $_lang['msfabrics_category_disable'] = 'Отключить Предмет';
 $_lang['msfabrics_categorys_disable'] = 'Отключить Предметы';
-$_lang['msfabrics_category_remove'] = 'Удалить Предмет';
+$_lang['msfabrics_category_remove'] = 'Удалить категорию';
 $_lang['msfabrics_categorys_remove'] = 'Удалить Предметы';
 $_lang['msfabrics_category_remove_confirm'] = 'Вы уверены, что хотите удалить этот Предмет?';
 $_lang['msfabrics_categorys_remove_confirm'] = 'Вы уверены, что хотите удалить эти Предметы?';
@@ -84,3 +84,30 @@ $_lang['msfabrics_vendor_err_nf'] = 'Предмет не найден.';
 $_lang['msfabrics_vendor_err_ns'] = 'Предмет не указан.';
 $_lang['msfabrics_vendor_err_remove'] = 'Ошибка при удалении Предмета.';
 $_lang['msfabrics_vendor_err_save'] = 'Ошибка при сохранении  Категории.';
+
+
+$_lang['msfabrics_names'] = 'Названия тканей';
+$_lang['msfabrics_name_id'] = 'Id';
+$_lang['msfabrics_name_vendor'] = 'Производитель ткани';
+$_lang['msfabrics_name_fabrics_names'] = 'Название ткани';
+$_lang['msfabrics_name_description'] = 'Описание';
+$_lang['msfabrics_name_active'] = 'Активно';
+
+$_lang['msfabrics_name_create'] = 'Добавить название ткани';
+$_lang['msfabrics_name_update'] = 'Изменить Предмет';
+$_lang['msfabrics_name_enable'] = 'Включить Предмет';
+$_lang['msfabrics_names_enable'] = 'Включить Предметы';
+$_lang['msfabrics_name_disable'] = 'Отключить Предмет';
+$_lang['msfabrics_names_disable'] = 'Отключить Предметы';
+$_lang['msfabrics_name_remove'] = 'Удалить Предмет';
+$_lang['msfabrics_names_remove'] = 'Удалить Предметы';
+$_lang['msfabrics_name_remove_confirm'] = 'Вы уверены, что хотите удалить этот Предмет?';
+$_lang['msfabrics_names_remove_confirm'] = 'Вы уверены, что хотите удалить эти Предметы?';
+$_lang['msfabrics_name_active'] = 'Включено';
+
+$_lang['msfabrics_name_err_name'] = 'Вы должны указать имя Предмета.';
+$_lang['msfabrics_name_err_ae'] = 'Предмет с таким именем уже существует.';
+$_lang['msfabrics_name_err_nf'] = 'Предмет не найден.';
+$_lang['msfabrics_name_err_ns'] = 'Предмет не указан.';
+$_lang['msfabrics_name_err_remove'] = 'Ошибка при удалении Предмета.';
+$_lang['msfabrics_name_err_save'] = 'Ошибка при сохранении  Категории.';

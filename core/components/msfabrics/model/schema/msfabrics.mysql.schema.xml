@@ -12,4 +12,9 @@
     <object class="msFabricsVendor" table="msfabrics_vendors" extends="xPDOSimpleObject">
         <field key="vendors_fabrics" dbtype="varchar" precision="100" phptype="string" null="false" />
     </object>
+
+    <object class="msFabricsName" table="msfabrics_names" extends="xPDOSimpleObject">
+        <field key="fabrics_vendor_id" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" />
+        <field key="fabrics_names" dbtype="varchar" precision="100" phptype="string" null="false" />
+    </object>
 </model>

@@ -14,6 +14,7 @@ if ($object->xpdo) {
                 'msFabricsCategory',
                 'msFabricsType',
                 'msFabricsVendor',
+                'msFabricsName',
             );
             foreach ($objects as $object) {
                 $manager->createObjectContainer($object);

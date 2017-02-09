@@ -49,6 +49,16 @@ msFabrics.panel.Home = function (config) {
                     xtype: 'msfabrics-grid-vendors',
                     cls: 'main-wrapper',
                 }]
+            },{
+                title: _('msfabrics_names'),
+                layout: 'anchor',
+                items: [{
+                    html: _('msfabrics_name_intro'),
+                    cls: 'panel-desc',
+                }, {
+                    xtype: 'msfabrics-grid-names',
+                    cls: 'main-wrapper',
+                }]
             }]
         }]
     });

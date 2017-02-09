@@ -30,15 +30,15 @@ class msFabricsCategoryUpdateProcessor extends modObjectUpdateProcessor
     public function beforeSet()
     {
         $id = (int)$this->getProperty('id');
-        $name = trim($this->getProperty('name'));
+        $category_fabrics = trim($this->getProperty('category_fabrics'));
         if (empty($id)) {
             return $this->modx->lexicon('msfabrics_category_err_ns');
         }
 
-        if (empty($name)) {
-            $this->modx->error->addField('name', $this->modx->lexicon('msfabrics_category_err_name'));
-        } elseif ($this->modx->getCount($this->classKey, array('name' => $name, 'id:!=' => $id))) {
-            $this->modx->error->addField('name', $this->modx->lexicon('msfabrics_category_err_ae'));
+        if (empty($category_fabrics)) {
+            $this->modx->error->addField('category_fabrics', $this->modx->lexicon('msfabrics_category_err_category_fabrics'));
+        } elseif ($this->modx->getCount($this->classKey, array('category_fabrics' => $category_fabrics, 'id:!=' => $id))) {
+            $this->modx->error->addField('category_fabrics', $this->modx->lexicon('msfabrics_category_err_ae'));
         }
 
         return parent::beforeSet();

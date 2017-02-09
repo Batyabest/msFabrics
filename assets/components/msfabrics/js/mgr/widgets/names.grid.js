@@ -1,7 +1,7 @@
-msFabrics.grid.Categorys = function (config) {
+msFabrics.grid.Names = function (config) {
     config = config || {};
     if (!config.id) {
-        config.id = 'msfabrics-grid-categorys';
+        config.id = 'msfabrics-grid-names';
     }
     Ext.applyIf(config, {
         url: msFabrics.config.connector_url,
@@ -10,12 +10,13 @@ msFabrics.grid.Categorys = function (config) {
         tbar: this.getTopBar(config),
         sm: new Ext.grid.CheckboxSelectionModel(),
         baseParams: {
-            action: 'mgr/category/getlist'
+            action: 'mgr/name/getlist',
+            vendor: config.vendor
         },
         listeners: {
             rowDblClick: function (grid, rowIndex, e) {
                 var row = grid.store.getAt(rowIndex);
-                this.updateCategory(grid, e, row);
+                this.updateItem(grid, e, row);
             }
         },
         viewConfig: {
@@ -34,7 +35,7 @@ msFabrics.grid.Categorys = function (config) {
         remoteSort: true,
         autoHeight: true,
     });
-    msFabrics.grid.Categorys.superclass.constructor.call(this, config);
+    msFabrics.grid.Names.superclass.constructor.call(this, config);
 
     // Clear selection on grid refresh
     this.store.on('load', function () {
@@ -43,26 +44,21 @@ msFabrics.grid.Categorys = function (config) {
         }
     }, this);
 };
-Ext.extend(msFabrics.grid.Categorys, MODx.grid.Grid, {
+Ext.extend(msFabrics.grid.Names, MODx.grid.Grid, {
     windows: {},
 
-    getMenu: function() {
-        var m = [];
-        m.push({
-            text: _('msfabrics_category_update')
-            ,handler: this.updateCategory
-        });
-        m.push('-');
-        m.push({
-            text: _('msfabrics_category_remove')
-            ,handler: this.removeCategory
-        });
-        this.addContextMenuItem(m);
+    getMenu: function (grid, rowIndex) {
+        var ids = this._getSelectedIds();
+
+        var row = grid.getStore().getAt(rowIndex);
+        var menu = msFabrics.utils.getMenu(row.data['actions'], this, ids);
+
+        this.addContextMenuItem(menu);
     },
 
-    createCategory: function (btn, e) {
+    createName: function (btn, e) {
         var w = MODx.load({
-            xtype: 'msfabrics-category-window-create',
+            xtype: 'msfabrics-name-window-create',
             id: Ext.id(),
             listeners: {
                 success: {
@@ -77,7 +73,7 @@ Ext.extend(msFabrics.grid.Categorys, MODx.grid.Grid, {
         w.show(e.target);
     },
 
-    updateCategory: function (btn, e, row) {
+    updateItem: function (btn, e, row) {
         if (typeof(row) != 'undefined') {
             this.menu.record = row.data;
         }
@@ -89,14 +85,14 @@ Ext.extend(msFabrics.grid.Categorys, MODx.grid.Grid, {
         MODx.Ajax.request({
             url: this.config.url,
             params: {
-                action: 'mgr/category/get',
+                action: 'mgr/name/get',
                 id: id
             },
             listeners: {
                 success: {
                     fn: function (r) {
                         var w = MODx.load({
-                            xtype: 'msfabrics-category-window-update',
+                            xtype: 'msfabrics-name-window-update',
                             id: Ext.id(),
                             record: r,
                             listeners: {
@@ -116,21 +112,21 @@ Ext.extend(msFabrics.grid.Categorys, MODx.grid.Grid, {
         });
     },
 
-    removeCategory: function () {
+    removeItem: function () {
         var ids = this._getSelectedIds();
         if (!ids.length) {
             return false;
         }
         MODx.msg.confirm({
             title: ids.length > 1
-                ? _('msfabrics_categorys_remove')
-                : _('msfabrics_category_remove'),
+                ? _('msfabrics_names_remove')
+                : _('msfabrics_name_remove'),
             text: ids.length > 1
-                ? _('msfabrics_categorys_remove_confirm')
-                : _('msfabrics_category_remove_confirm'),
+                ? _('msfabrics_names_remove_confirm')
+                : _('msfabrics_name_remove_confirm'),
             url: this.config.url,
             params: {
-                action: 'mgr/category/remove',
+                action: 'mgr/vendor/remove',
                 ids: Ext.util.JSON.encode(ids),
             },
             listeners: {
@@ -152,7 +148,7 @@ Ext.extend(msFabrics.grid.Categorys, MODx.grid.Grid, {
         MODx.Ajax.request({
             url: this.config.url,
             params: {
-                action: 'mgr/category/disable',
+                action: 'mgr/name/disable',
                 ids: Ext.util.JSON.encode(ids),
             },
             listeners: {
@@ -173,7 +169,7 @@ Ext.extend(msFabrics.grid.Categorys, MODx.grid.Grid, {
         MODx.Ajax.request({
             url: this.config.url,
             params: {
-                action: 'mgr/category/enable',
+                action: 'mgr/name/enable',
                 ids: Ext.util.JSON.encode(ids),
             },
             listeners: {
@@ -187,18 +183,23 @@ Ext.extend(msFabrics.grid.Categorys, MODx.grid.Grid, {
     },
 
     getFields: function () {
-        return ['id', 'category_fabrics'];
+        return ['id', 'fabrics_vendor_id', 'fabrics_names','vendor'];
     },
 
     getColumns: function () {
         return [{
-            header: _('msfabrics_category_id'),
+            header: _('msfabrics_name_id'),
             dataIndex: 'id',
             sortable: true,
             width: 70
         }, {
-            header: _('msfabrics_category_category_fabrics'),
-            dataIndex: 'category_fabrics',
+            header: _('msfabrics_name_vendor'),
+            dataIndex: 'vendor',
+            sortable: true,
+            width: 200
+        }, {
+            header: _('msfabrics_name_fabrics_names'),
+            dataIndex: 'fabrics_names',
             sortable: true,
             width: 200
         }];
@@ -206,8 +207,8 @@ Ext.extend(msFabrics.grid.Categorys, MODx.grid.Grid, {
 
     getTopBar: function () {
         return [{
-            text: '<i class="icon icon-plus"></i>&nbsp;' + _('msfabrics_category_create'),
-            handler: this.createCategory,
+            text: '<i class="icon icon-plus"></i>&nbsp;' + _('msfabrics_name_create'),
+            handler: this.createName,
             scope: this
         }, '->', {
             xtype: 'msfabrics-field-search',
@@ -271,4 +272,4 @@ Ext.extend(msFabrics.grid.Categorys, MODx.grid.Grid, {
         this.getBottomToolbar().changePage(1);
     },
 });
-Ext.reg('msfabrics-grid-categorys', msFabrics.grid.Categorys);
+Ext.reg('msfabrics-grid-names', msFabrics.grid.Names);
